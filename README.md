@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DRAW: Autosegment
 
 In the realm of Radiation Therapy Planning,
@@ -33,3 +34,6 @@ Incoming
 ## Acknowledgements and Future Plans
 
 TODO
+=======
+# DRAW_FFLUNet
+>>>>>>> 13fc684197daa5d8bc9f658713c7d8465a726b73
