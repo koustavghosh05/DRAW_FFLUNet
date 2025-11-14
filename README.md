@@ -40,3 +40,5 @@ Steps to install.
 1. pip install -r requirements.txt
 2. cd /nnunet_draw
 3. pip install -e .
+
+Trainer name: nnUNetTrainer_FFLUNet
