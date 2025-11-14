@@ -1,0 +1,269 @@
+2025-11-13 22:37:27,571, PID: 1077267 [   INFO] utils._init_num_threads@151: Note: NumExpr detected 48 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2025-11-13 22:37:27,572, PID: 1077267 [   INFO] utils._init_num_threads@164: NumExpr defaulting to 16 threads.
+2025-11-13 22:37:27,748, PID: 1077267 [   INFO] start.start_continuous_prediction@13: Starting task_model_prediction
+2025-11-13 22:37:27,758, PID: 1077267 [   INFO] start.start_continuous_prediction@13: Starting task_watch_dir
+2025-11-13 22:37:27,764, PID: 1077331 [   INFO] TASK_predict.task_model_prediction@148: No remaining task found form DB
+2025-11-13 22:37:27,769, PID: 1077332 [   INFO] TASK_copy.task_watch_dir@194: Started watching /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir for modifications
+2025-11-13 22:37:32,594, PID: 1077332 [   INFO] TASK_copy.on_created@86: CREATED /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:37:32,595, PID: 1077332 [   INFO] TASK_copy.modification_event_trigger@101: MODIFIED /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:37:32,597, PID: 1077332 [  ERROR] TASK_copy.modification_event_trigger@133: Probably Spurious Event from OS
+Traceback (most recent call last):
+  File "/data1/koustav/mydata/draw-seg-fflunet_integrtae/draw-train-predict-pipeline-main/draw/pipeline/TASK_copy.py", line 105, in modification_event_trigger
+    series_name = get_uniq_id_for_sample(src_path)
+  File "/data1/koustav/mydata/draw-seg-fflunet_integrtae/draw-train-predict-pipeline-main/draw/pipeline/TASK_copy.py", line 140, in get_uniq_id_for_sample
+    return get_dicom_attribute_from_dir(src_path, DicomKeyToTag.series_instance_uid)
+  File "/data1/koustav/mydata/draw-seg-fflunet_integrtae/draw-train-predict-pipeline-main/draw/utils/ioutils.py", line 97, in get_dicom_attribute_from_dir
+    f = dcmread(str(get_one_dcm_path(dir_path)))
+  File "/data1/koustav/mydata/draw-seg-fflunet_integrtae/draw-train-predict-pipeline-main/draw/utils/ioutils.py", line 66, in get_one_dcm_path
+    one_dcm_path = glob(normpath(f"{dicom_dir}/{DCM_REGEX}"), recursive=True)[0]
+IndexError: list index out of range
+2025-11-13 22:37:37,776, PID: 1077331 [   INFO] TASK_predict.task_model_prediction@148: No remaining task found form DB
+2025-11-13 22:37:46,796, PID: 1077332 [   INFO] TASK_copy.on_modified@76: MODIFIED /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:37:46,796, PID: 1077332 [   INFO] TASK_copy.modification_event_trigger@101: MODIFIED /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:37:46,810, PID: 1077332 [   INFO] TASK_copy.modification_event_trigger@106: Series Name: 1.2.826.0.1.3680043.10.1561.974.5549.844.1
+2025-11-13 22:37:46,811, PID: 1077332 [   INFO] TASK_copy.modification_event_trigger@107: Dir Path: /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:37:46,836, PID: 1077332 [   INFO] TASK_copy.wait_copy_finish@144: Waiting for copy to finish in /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844...
+2025-11-13 22:37:46,839, PID: 1077332 [   INFO] TASK_copy.wait_copy_finish@159: Found 301 files, stability count: 0
+2025-11-13 22:37:47,787, PID: 1077331 [   INFO] TASK_predict.task_model_prediction@148: No remaining task found form DB
+2025-11-13 22:37:57,790, PID: 1077331 [   INFO] TASK_predict.task_model_prediction@148: No remaining task found form DB
+2025-11-13 22:38:06,863, PID: 1077332 [   INFO] TASK_copy.wait_copy_finish@159: Found 301 files, stability count: 1
+2025-11-13 22:38:07,801, PID: 1077331 [   INFO] TASK_predict.task_model_prediction@148: No remaining task found form DB
+2025-11-13 22:38:17,804, PID: 1077331 [   INFO] TASK_predict.task_model_prediction@148: No remaining task found form DB
+2025-11-13 22:38:26,867, PID: 1077332 [   INFO] TASK_copy.wait_copy_finish@159: Found 301 files, stability count: 2
+2025-11-13 22:38:26,867, PID: 1077332 [   INFO] TASK_copy.wait_copy_finish@163: Copy complete detected for directory /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844 with 301 files.
+2025-11-13 22:38:26,877, PID: 1077332 [   INFO] TASK_copy.determine_model@50: Model Name: TSCns
+2025-11-13 22:38:26,877, PID: 1077332 [   INFO] TASK_copy.modification_event_trigger@118: Model Name: TSCns
+2025-11-13 22:38:27,022, PID: 1077332 [   INFO] db.enqueue@93: Enqued 1
+2025-11-13 22:38:27,023, PID: 1077332 [   INFO] TASK_copy.on_modified@76: MODIFIED /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:38:27,023, PID: 1077332 [   INFO] TASK_copy.modification_event_trigger@101: MODIFIED /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:38:27,030, PID: 1077332 [   INFO] TASK_copy.modification_event_trigger@106: Series Name: 1.2.826.0.1.3680043.10.1561.974.5549.844.1
+2025-11-13 22:38:27,030, PID: 1077332 [   INFO] TASK_copy.modification_event_trigger@107: Dir Path: /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:38:27,033, PID: 1077332 [   INFO] TASK_copy.modification_event_trigger@113: Duplicate Event detected @ /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844 with series 1.2.826.0.1.3680043.10.1561.974.5549.844.1
+2025-11-13 22:38:27,857, PID: 1077331 [   INFO] TASK_predict.initiate_model_prediction@123: 11002 MB free GPU. Trying TSCns
+2025-11-13 22:38:27,857, PID: 1077331 [   INFO] TASK_predict.initiate_model_prediction@124:  'initiate_model_predict' called with model_name = TSCns and data_path = /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:38:28,023, PID: 1077331 [   INFO] db.dequeue@34: Dequeing 1
+2025-11-13 22:38:58,062, PID: 1077341 [   INFO] predict.predict_one_dataset@91: Processing ID 920
+2025-11-13 22:38:58,063, PID: 1077341 [   INFO] predict.predict_one_dataset@98: Raw postprocess from config: None
+2025-11-13 22:38:58,063, PID: 1077341 [   INFO] predict.predict_one_dataset@99: Current working directory: /data1/koustav/mydata/draw-seg-fflunet_integrtae/draw-train-predict-pipeline-main
+2025-11-13 22:38:58,063, PID: 1077341 [   INFO] predict.predict_one_dataset@100: Model config: 3d_fullres
+2025-11-13 22:38:58,063, PID: 1077341 [   INFO] predict.predict_one_dataset@101: Postprocess: None
+2025-11-13 22:38:58,063, PID: 1077341 [   INFO] predict.predict_one_dataset@106: Postprocess is None or 'null' - skipping postprocessing
+2025-11-13 22:38:58,063, PID: 1077341 [   INFO] ioutils.remove_stuff@56: Deleting data/nnUNet_raw/Dataset920_TSCns
+2025-11-13 22:38:58,076, PID: 1077341 [   INFO] predict.predict_one_dataset@115: Found 1 DICOM directories
+2025-11-13 22:38:58,845, PID: 1077341 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 22:39:10,081, PID: 1077341 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmpqxodidw2/default.nii.gz
+2025-11-13 22:39:10,082, PID: 1077341 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/watch_dir/1.2.826.0.1.3680043.10.1561.974.5549.844 complete
+2025-11-13 22:39:10,082, PID: 1077341 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_000_0000.nii.gz
+2025-11-13 22:39:10,140, PID: 1077341 [   INFO] ioutils.remove_stuff@56: Deleting output/TSCns/920/modelpred
+2025-11-13 22:41:09,603, PID: 1077331 [   INFO] predict.folder_predict@51: Prediction completed from model TSCns
+2025-11-13 22:41:09,604, PID: 1077331 [   INFO] predict.get_final_output_dir@190: in draw/predict/predict.py
+2025-11-13 22:41:09,604, PID: 1077331 [   INFO] predict.get_final_output_dir@192: preds_dir: output
+2025-11-13 22:41:09,606, PID: 1077331 [   INFO] predict.get_final_output_dir@194: parent_dataset_name: TSCns
+2025-11-13 22:41:09,606, PID: 1077331 [   INFO] predict.get_final_output_dir@196: final_output_dir: output/TSCns/results
+2025-11-13 22:41:10,880, PID: 1077331 [   INFO] nifti2rt.convert_multilabel_nifti_to_rtstruct@40: Processing Mask Brain
+2025-11-13 22:41:11,702, PID: 1077331 [   INFO] nifti2rt.convert_multilabel_nifti_to_rtstruct@40: Processing Mask Cochlea_L
+2025-11-13 22:41:11,866, PID: 1077331 [   INFO] nifti2rt.convert_multilabel_nifti_to_rtstruct@40: Processing Mask Cochlea_R
+2025-11-13 22:41:12,000, PID: 1077331 [   INFO] nifti2rt.convert_multilabel_nifti_to_rtstruct@40: Processing Mask Eye_L
+2025-11-13 22:41:12,130, PID: 1077331 [   INFO] nifti2rt.convert_multilabel_nifti_to_rtstruct@40: Processing Mask Eye_R
+2025-11-13 22:41:12,563, PID: 1077331 [   INFO] nifti2rt.convert_multilabel_nifti_to_rtstruct@45: RT for output/TSCns/920/modelpred/seg_000.nii.gz saved at output/2025-11-13.22-38/1.2.826.0.1.3680043.10.1561.974.5549.844.1/AUTOSEGMENT.RT.dcm
+2025-11-13 22:41:12,583, PID: 1077331 [   INFO] nifti2rt.convert_nifti_outputs_to_dicom@160: Updating 1.2.826.0.1.3680043.10.1561.974.5549.844.1 to output/2025-11-13.22-38/1.2.826.0.1.3680043.10.1561.974.5549.844.1, Status.PREDICTED
+2025-11-13 22:41:12,720, PID: 1077331 [   INFO] predict.folder_predict@74: Prediction Complete for TSCns
+2025-11-13 22:41:12,724, PID: 1077331 [   INFO] TASK_predict.run_prediction@36: Got 1 from DB
+2025-11-13 22:41:12,853, PID: 1077331 [   INFO] TASK_predict.send_to_external_server@27: Sent 1 to server
+2025-11-13 22:41:12,856, PID: 1077331 [   INFO] db.dequeue@34: Dequeing 0
+2025-11-13 22:41:12,856, PID: 1077331 [   INFO] TASK_predict.initiate_model_prediction@130: TSCns ran: False
+2025-11-13 22:41:32,877, PID: 1077331 [   INFO] TASK_predict.task_model_prediction@148: No remaining task found form DB
+2025-11-13 23:12:32,226, PID: 1079543 [   INFO] utils._init_num_threads@151: Note: NumExpr detected 48 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2025-11-13 23:12:32,226, PID: 1079543 [   INFO] utils._init_num_threads@164: NumExpr defaulting to 16 threads.
+2025-11-13 23:12:32,419, PID: 1079543 [   INFO] preprocess_data.run_pre_processing@225: Processing ID 920
+2025-11-13 23:12:32,419, PID: 1079543 [   INFO] preprocess_data.run_pre_processing@226: Found 10 directories to work on...
+2025-11-13 23:12:39,420, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:12:40,934, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:12:40,992, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:12:41,207, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:12:41,252, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_R
+2025-11-13 23:12:41,464, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_R
+2025-11-13 23:12:41,514, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:12:41,753, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:12:41,799, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:12:42,038, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:12:42,083, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/83c3e111.fb83.4ed4.bcf4.9fba8b3d1acc/1.2.826.0.1.3680043.10.1561.523.5152.642
+2025-11-13 23:12:53,990, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmpnxnkerq2/default.nii.gz
+2025-11-13 23:12:53,990, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/83c3e111.fb83.4ed4.bcf4.9fba8b3d1acc/1.2.826.0.1.3680043.10.1561.523.5152.642 complete
+2025-11-13 23:12:53,990, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_000_0000.nii.gz
+2025-11-13 23:12:54,642, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_000.nii.gz
+2025-11-13 23:12:56,305, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_000.nii.gz
+2025-11-13 23:12:58,022, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_000.nii.gz
+2025-11-13 23:12:59,719, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_000.nii.gz
+2025-11-13 23:13:01,444, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_000.nii.gz
+2025-11-13 23:13:10,839, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:13:11,943, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:13:11,999, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:13:12,160, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:13:12,208, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_R
+2025-11-13 23:13:12,370, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_R
+2025-11-13 23:13:12,417, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:13:12,607, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:13:12,659, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:13:12,850, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:13:12,897, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/62bc4194.15b2.411a.9428.b7fe246a7359/1.2.826.0.1.3680043.10.1561.933.4814.147
+2025-11-13 23:13:24,966, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmp7axi1qp1/default.nii.gz
+2025-11-13 23:13:24,967, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/62bc4194.15b2.411a.9428.b7fe246a7359/1.2.826.0.1.3680043.10.1561.933.4814.147 complete
+2025-11-13 23:13:24,967, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_001_0000.nii.gz
+2025-11-13 23:13:25,466, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_001.nii.gz
+2025-11-13 23:13:27,275, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_001.nii.gz
+2025-11-13 23:13:29,107, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_001.nii.gz
+2025-11-13 23:13:31,037, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_001.nii.gz
+2025-11-13 23:13:32,966, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_001.nii.gz
+2025-11-13 23:13:46,653, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:13:46,882, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:13:46,931, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:13:47,119, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:13:47,167, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_R
+2025-11-13 23:13:47,332, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_R
+2025-11-13 23:13:47,380, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:13:47,545, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:13:47,597, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:13:48,798, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:13:48,856, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/52406374.aa02.4d8e.8e77.1d4167cf4720/1.2.826.0.1.3680043.10.1561.613.3632.551
+2025-11-13 23:14:00,821, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmpmwz9nxzu/default.nii.gz
+2025-11-13 23:14:00,821, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/52406374.aa02.4d8e.8e77.1d4167cf4720/1.2.826.0.1.3680043.10.1561.613.3632.551 complete
+2025-11-13 23:14:00,822, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_002_0000.nii.gz
+2025-11-13 23:14:01,529, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_002.nii.gz
+2025-11-13 23:14:03,300, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_002.nii.gz
+2025-11-13 23:14:05,146, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_002.nii.gz
+2025-11-13 23:14:06,998, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_002.nii.gz
+2025-11-13 23:14:08,705, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_002.nii.gz
+2025-11-13 23:14:15,430, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:14:16,014, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:14:16,039, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:14:16,100, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:14:16,120, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_R
+2025-11-13 23:14:16,180, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_R
+2025-11-13 23:14:16,200, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:14:16,270, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:14:16,290, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:14:16,359, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:14:16,380, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/78eab6d6.1321.450d.a6fb.7318e4898d6d/1.2.826.0.1.3680043.10.1561.672.9444.143
+2025-11-13 23:14:20,902, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmpzjv7qwbr/default.nii.gz
+2025-11-13 23:14:20,902, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/78eab6d6.1321.450d.a6fb.7318e4898d6d/1.2.826.0.1.3680043.10.1561.672.9444.143 complete
+2025-11-13 23:14:20,902, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_003_0000.nii.gz
+2025-11-13 23:14:21,111, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_003.nii.gz
+2025-11-13 23:14:21,658, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_003.nii.gz
+2025-11-13 23:14:22,195, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_003.nii.gz
+2025-11-13 23:14:22,741, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_003.nii.gz
+2025-11-13 23:14:23,285, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_003.nii.gz
+2025-11-13 23:14:31,971, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:14:32,131, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:14:32,173, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:14:32,337, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:14:32,379, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_R
+2025-11-13 23:14:32,524, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_R
+2025-11-13 23:14:32,565, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:14:32,704, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:14:32,755, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:14:33,842, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:14:33,895, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/2fedc7ec.fced.4d96.baab.e820a83d3f1b/1.2.826.0.1.3680043.10.1561.974.5549.844
+2025-11-13 23:14:44,890, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmp8l613cr_/default.nii.gz
+2025-11-13 23:14:44,890, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/2fedc7ec.fced.4d96.baab.e820a83d3f1b/1.2.826.0.1.3680043.10.1561.974.5549.844 complete
+2025-11-13 23:14:44,890, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_004_0000.nii.gz
+2025-11-13 23:14:45,535, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_004.nii.gz
+2025-11-13 23:14:47,265, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_004.nii.gz
+2025-11-13 23:14:48,878, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_004.nii.gz
+2025-11-13 23:14:50,485, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_004.nii.gz
+2025-11-13 23:14:52,144, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_004.nii.gz
+2025-11-13 23:15:03,072, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:15:04,296, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:15:04,354, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:15:04,490, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:15:04,530, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_R
+2025-11-13 23:15:04,669, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_R
+2025-11-13 23:15:04,709, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:15:04,864, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:15:04,905, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:15:05,066, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:15:05,106, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/ed19f958.e33a.454c.858b.a983ffd5dd18/1.2.826.0.1.3680043.10.1561.861.2046.248
+2025-11-13 23:15:14,950, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmpqgc1x0rr/default.nii.gz
+2025-11-13 23:15:14,950, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/ed19f958.e33a.454c.858b.a983ffd5dd18/1.2.826.0.1.3680043.10.1561.861.2046.248 complete
+2025-11-13 23:15:14,950, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_005_0000.nii.gz
+2025-11-13 23:15:15,555, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_005.nii.gz
+2025-11-13 23:15:17,125, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_005.nii.gz
+2025-11-13 23:15:18,640, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_005.nii.gz
+2025-11-13 23:15:20,055, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_005.nii.gz
+2025-11-13 23:15:21,566, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_005.nii.gz
+2025-11-13 23:15:32,831, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:15:32,995, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:15:33,040, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:15:33,204, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:15:33,259, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_R
+2025-11-13 23:15:33,455, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_R
+2025-11-13 23:15:33,499, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:15:33,652, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:15:33,696, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:15:34,909, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:15:34,963, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/3bae6c61.0c7f.41e9.93de.03ed2cfde624/1.2.826.0.1.3680043.10.1561.535.5936.852
+2025-11-13 23:15:46,449, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmpq94ad76u/default.nii.gz
+2025-11-13 23:15:46,449, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/3bae6c61.0c7f.41e9.93de.03ed2cfde624/1.2.826.0.1.3680043.10.1561.535.5936.852 complete
+2025-11-13 23:15:46,450, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_006_0000.nii.gz
+2025-11-13 23:15:47,062, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_006.nii.gz
+2025-11-13 23:15:48,754, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_006.nii.gz
+2025-11-13 23:15:50,511, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_006.nii.gz
+2025-11-13 23:15:52,153, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_006.nii.gz
+2025-11-13 23:15:53,769, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_006.nii.gz
+2025-11-13 23:16:02,990, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:16:04,297, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:16:04,357, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:16:04,516, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:16:04,560, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_R
+2025-11-13 23:16:04,713, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_R
+2025-11-13 23:16:04,761, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:16:04,929, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:16:04,974, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:16:05,146, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:16:05,191, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/c75028c6.19e0.4665.afa6.422d2faac963/1.2.826.0.1.3680043.10.1561.251.3432.984
+2025-11-13 23:16:16,646, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmpaxz6dbiq/default.nii.gz
+2025-11-13 23:16:16,646, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/c75028c6.19e0.4665.afa6.422d2faac963/1.2.826.0.1.3680043.10.1561.251.3432.984 complete
+2025-11-13 23:16:16,646, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_007_0000.nii.gz
+2025-11-13 23:16:17,274, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_007.nii.gz
+2025-11-13 23:16:19,009, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_007.nii.gz
+2025-11-13 23:16:20,695, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_007.nii.gz
+2025-11-13 23:16:22,402, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_007.nii.gz
+2025-11-13 23:16:24,129, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_007.nii.gz
+2025-11-13 23:16:28,949, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:16:29,232, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:16:29,247, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:16:29,289, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:16:29,302, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@102: Skipping mask Cochlea_R no shape/polygon found
+2025-11-13 23:16:29,302, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:16:29,342, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:16:29,354, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:16:29,383, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:16:29,396, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/cc4658d9.d214.452f.ade8.421a5e3b2ec3/1.2.826.0.1.3680043.10.1561.519.9870.149
+2025-11-13 23:16:32,376, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmp870ggrnd/default.nii.gz
+2025-11-13 23:16:32,376, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/cc4658d9.d214.452f.ade8.421a5e3b2ec3/1.2.826.0.1.3680043.10.1561.519.9870.149 complete
+2025-11-13 23:16:32,376, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_008_0000.nii.gz
+2025-11-13 23:16:32,513, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_008.nii.gz
+2025-11-13 23:16:32,791, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_008.nii.gz
+2025-11-13 23:16:33,056, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_008.nii.gz
+2025-11-13 23:16:33,056, PID: 1079543 [WARNING] preprocess_data.combine_masks_to_multilabel_file@174: Cochlea_R missing for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_008.nii.gz. Generated Zero filled mask
+2025-11-13 23:16:33,152, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_008.nii.gz
+2025-11-13 23:16:33,449, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_008.nii.gz
+2025-11-13 23:16:41,152, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_R
+2025-11-13 23:16:41,360, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_R
+2025-11-13 23:16:41,403, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Eye_L
+2025-11-13 23:16:41,574, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Eye_L
+2025-11-13 23:16:41,617, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_R
+2025-11-13 23:16:41,765, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_R
+2025-11-13 23:16:41,806, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Cochlea_L
+2025-11-13 23:16:42,002, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Cochlea_L
+2025-11-13 23:16:42,045, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@109: Working on mask Brain
+2025-11-13 23:16:43,418, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@126: Saving Mask at: Brain
+2025-11-13 23:16:43,474, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@131: Converting DICOM scan to NII for path /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/5cf75fd1.3baf.4494.85e8.1bceae914738/1.2.826.0.1.3680043.10.1561.502.6485.593
+2025-11-13 23:16:54,920, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@140: Saved Default Empty Mask at /tmp/tmponuxctnj/default.nii.gz
+2025-11-13 23:16:54,921, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@142: Conversion for /data1/koustav/mydata/draw-seg-fflunet_integrtae/CNS_TEST_d10/5cf75fd1.3baf.4494.85e8.1bceae914738/1.2.826.0.1.3680043.10.1561.502.6485.593 complete
+2025-11-13 23:16:54,921, PID: 1079543 [   INFO] dcm2nii.convert_DICOM_to_Multi_NIFTI@143: Final output saved at data/nnUNet_raw/Dataset920_TSCns/imagesTr/seg_009_0000.nii.gz
+2025-11-13 23:16:55,548, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Brain for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_009.nii.gz
+2025-11-13 23:16:57,205, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_009.nii.gz
+2025-11-13 23:16:58,901, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Cochlea_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_009.nii.gz
+2025-11-13 23:17:00,497, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_L for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_009.nii.gz
+2025-11-13 23:17:02,154, PID: 1079543 [   INFO] preprocess_data.combine_masks_to_multilabel_file@170: Processing Map Eye_R for data/nnUNet_raw/Dataset920_TSCns/labelsTr/seg_009.nii.gz

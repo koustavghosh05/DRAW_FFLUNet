@@ -1,0 +1,15 @@
+name: TSCns
+protocol: cns
+models:
+  920:
+    name: TSCns
+    config: 3d_fullres   # 3d_fullres
+    map:
+      1: Brain
+      2: Cochlea_L
+      3: Cochlea_R
+      4: Eye_L
+      5: Eye_R
+    trainer_name: nnUNetTrainer_FFLUNet
+    postprocess: null
+
