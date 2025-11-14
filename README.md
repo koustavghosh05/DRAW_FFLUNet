@@ -36,4 +36,7 @@ Incoming
 TODO
 =======
 # DRAW_FFLUNet
->>>>>>> 13fc684197daa5d8bc9f658713c7d8465a726b73
+Steps to install.
+1. pip install -r requirements.txt
+2. cd /nnunet_draw
+3. pip install -e .
